@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if username == 'leo' %}
+    <p>{{ username }}</p>
+{% else %}
+    <p>{{ name|default('没有用户名') }}</p>
+{% endif %}
+
+{% for foo in books %}
+    <p>{{ foo }}</p>
+{% endfor %}
+
+{% for key,value in users.items()  %}
+    <p>{{ key }}</p>
+    <p>{{ value }}</p>
+{% endfor %}
+
+{% for user in useruser %}
+    <li>{{ user.username }}</li>
+{% else %}
+	  <li><em>no users found</em></li>
+{% endfor %}
+
+</body>
+</html>

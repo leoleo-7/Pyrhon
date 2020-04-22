@@ -1,0 +1,33 @@
+{% import 'macro.html' as macro with context %}
+{#{% from 'macro.html' import input %}#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+      <td>用户名:</td>
+      <td>{{ macro.input('username') }}</td>
+  </tr>
+<table>
+{#    {{ macro.input(value='有值了') }}#}
+{#    {{ input('password', type='password') }}#}
+    <p>{{ name }}</p>
+    <p>{{ age|abs }}</p>
+{#    记住一个特例，当没有创建这个对象就行#}
+    <p>{{ username|default('此人很懒，什么也没留下...') }}</p>
+{#    自动转义，关闭转义#}
+{#    {% autoescape off %}#}
+{#    <p>{{ es }}</p>#}
+{#    {% endautoescape  %}#}
+{#    第二种转义方式，标记safe#}
+{#    <p>{{ es|safe }}</p>#}
+    <P>{{ books|first }}</P>
+    <p>{{ books|last }}</p>
+    <p>{{ username|my_cut }}</p>
+    <p>该文章发布于{{ now_time|handle_time }}</p>
+</body>
+</html>
